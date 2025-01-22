@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free bootstrap documentation template">
-    <title>CHI</title>
+    <title>CHH_production</title>
     <!-- using online links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -70,7 +70,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="api-information">
                                     <div class="collection-name">
-                                        <p>CHI</p>
+                                        <p>CHH_production</p>
                                     </div>
                                     <div class="collection-description">
                                         <p>This workspace provides a collection of endpoints designed  
@@ -170,508 +170,32 @@ POST {{base_url}}/omnic/api/token/generate-token
                                      <div class="heading">
                                         <div class="name">
                                             <span class="POST method" >POST</span>
-                                            02. encrypt <span class="lock-icon"></span>
+                                            04 buy insurance <span class="lock-icon"></span>
                                         </div>
                                      </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/encrypt</div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/new</div>
                                     
                                     <div class="description request-description">
-                                        <p><p>The endpoint<code>encrypt</code>is a request to secure insurance service data.</p>
-<h3 id="required">Required:</h3>
+                                        <p><p><code>buy insurance</code> function is used to purchase insurance coverage.</p>
+<p><u><b>Required:</b></u></p>
+<p>Run the <code>get subrisks</code> endpoint first. This step is necessary to retrieve the available options for the <code>insuranceClass</code>. Once the subrisk options are retrieved, select the appropriate <code>insuranceClass</code> value and include it in the payload for the subsequent request.</p>
+<p><u>Sample code:</u> insuranceClass: &ldquo;PRIVATE COMPREHENSIVE&rdquo;</p>
+<p><u>Validation Rules:</u></p>
 <ul>
 <li>
-<p><code>userName</code>: The username of the user.</p>
+<p><code>Date</code>: The date should be in day/month/year format (e.g., 12/01/2025).</p>
 </li>
 <li>
-<p><code>password</code>: The password of the user.</p>
-</li>
-</ul>
-<h3 id="validation-rules">Validation Rules:</h3>
-<ul>
-<li>
-<p><code>Date</code>: The date should be in day/month/year format (e.g., 28/11/2024).</p>
-</li>
-<li>
-<p><code>Car Registration No.</code>: The car registration number must be <strong>no more than</strong> <strong>11 characters</strong> in length.</p>
+<p><code>Car Registration No.</code>: The car registration number must <strong>not be greater than</strong> <strong>11 characters</strong>.</p>
 </li>
 <li>
 <p><code>Chasis Number</code>: The chasis number must <strong>not</strong> contain the letters &ldquo;I&rdquo; and &ldquo;O&rdquo;.</p>
 </li>
 </ul>
-<p>The length of the chasis number must be <strong>no more than</strong> <strong>17 characters</strong>.</p>
+<p>The length of the chasis number must not be more <strong>than</strong> <strong>17 characters</strong>.</p>
 <ul>
 <li><code>Sum Insured Type</code>: The sum insured should be <strong>numeric</strong> (i.e., a number)</li>
 </ul></p>
-                                    </div>
-                                    
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                            <div class="raw-body code-snippet">
-                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="02. encrypt">
-                                                  <code>
-                                                    
-{
-    "customerDetails": {
-        "title": "Mr",
-        "firstName": "John",
-        "surname": "Doe",
-        "otherNames": "johndoe",
-        "mobileNumber": "+2341234567890",
-        "gender": "Male",
-        "emailAddress": "aajagunna@chiplc.com",
-        "dateOfBirth": "08/05/1995",
-        "address": "123 Main Street, Lekki",
-        "country": "Nigeria",
-        "stateOfResidence": "Lagos",
-        "meansId": "National ID",
-        "meansIdNo": "NationalIdnumber",
-        "idNumber": "12345678901",
-        "userId": "JD001",
-        "occupation": "Software Engineer",
-        "submittedBy": "Agent007",
-        "insuredType": "Individual"
-    },
-    "startDate": "06/12/2024",
-    "endDate": "06/12/2025",
-    "subRisk": "private motor",
-    "insuranceClass": "PRIVATE COMPREHENSIVE",
-    "vehicleUsageType": "Private",
-    "carBrand": "GLK",
-    "carModel": "300",
-    "carColor": "Mettallic Gray",
-    "carRegNo": "KTU897Wm",
-    "engineNo": "1NXBR32E87Z123456",
-    "chassisNo": "1HGCM82633A123456",
-    "party": "Mayfair Insurance Brokers Limited",
-    "partyId": "1100195",
-    "vehicleRegState": "Lagos",
-    "vehicleType": "car",
-    "vehicleMake": "Benz",
-    "vehicleYear": "2024",
-    "sumInsured": 51000000.00,
-    "bizOption": "New",
-    "engineCapacity": "6l",
-    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
-    "paymentType": "Transfer",
-    // "grossPremium": "",
-    // "premiumRate": 5.00,
-    "transactionRef": "TRX123456789",
-    // "payMode": "Credit Card",
-    "submittedBy": "ajagz"
-}
-
-// {
-//      "customerDetails": {
-//         "title": "Mr",
-//         "firstName": "John",
-//         "surname": "Doe",
-//         "otherNames": "johndoe",
-//         "mobileNumber": "+2341234567890",
-//         "gender": "Male",
-//         "emailAddress": "johndoe@example.com",
-//         "dateOfBirth": "08/05/1995",
-//         "address": "123 Main Street, Lekki",
-//         "country": "Nigeria",
-//         "stateOfResidence": "Lagos",
-//         "meansId": "National ID",
-//         "meansIdNo": "NationalIdnumber",
-//         "idNumber": "12345678901",
-//         "userId": "JD001",
-//         "occupation": "Software Engineer",
-//         "submittedBy": "Agent007",
-//          "insuredType": "Individual"
-//     },
-//   "transactionRef": "",
-//   "subRisk": "",
-//   "startDate": "28/10/2023",
-//   "endDate": "28/10/2023",
-//   "duration": -1,
-//   "insuranceClass": "",
-//   "vehicleUsageType": "",
-//   "carMake": "",
-//   "carBrand": "",
-//   "carModel": "",
-//   "sumInsured": -1000,
-//   "submittedBy": ""
-// }
-
-// {
-//      "submittedBy": "USERD001"
-// }
-
-{
-    "transaction_ref": "123",
-    "debit_note_number": "123"
-}
-                                                  </code>
-                                              </pre>
-                                            </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                    <div class="heading">
-                                        <span>Example Request</span>
-                                    </div>
-                                    <div class="responses-index">
-                                        <div class="dropdown response-name">
-                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">02. encrypt</span>
-                                                <span class="caret"></span>
-
-                                            </button>
-
-                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="2" data-response-info="response_2">02. encrypt</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
-                                    <div class="request code-snippet">
-                                        <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="02. encrypt">
-                                                <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/encrypt
-
-{
-    "customerDetails": {
-        "title": "Mr",
-        "firstName": "John",
-        "surname": "Doe",
-        "otherNames": "johndoe",
-        "mobileNumber": "+2341234567890",
-        "gender": "Male",
-        "emailAddress": "aajagunna@chiplc.com",
-        "dateOfBirth": "08/05/1995",
-        "address": "123 Main Street, Lekki",
-        "country": "Nigeria",
-        "stateOfResidence": "Lagos",
-        "meansId": "National ID",
-        "meansIdNo": "NationalIdnumber",
-        "idNumber": "12345678901",
-        "userId": "JD001",
-        "occupation": "Software Engineer",
-        "submittedBy": "Agent007",
-        "insuredType": "Individual"
-    },
-    "startDate": "06/12/2024",
-    "endDate": "06/12/2025",
-    "subRisk": "private motor",
-    "insuranceClass": "PRIVATE COMPREHENSIVE",
-    "vehicleUsageType": "Private",
-    "carBrand": "GLK",
-    "carModel": "300",
-    "carColor": "Mettallic Gray",
-    "carRegNo": "KTU897Wm",
-    "engineNo": "1NXBR32E87Z123456",
-    "chassisNo": "1HGCM82633A123456",
-    "party": "Mayfair Insurance Brokers Limited",
-    "partyId": "1100195",
-    "vehicleRegState": "Lagos",
-    "vehicleType": "car",
-    "vehicleMake": "Benz",
-    "vehicleYear": "2024",
-    "sumInsured": 51000000.00,
-    "bizOption": "New",
-    "engineCapacity": "6l",
-    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
-    "paymentType": "Transfer",
-    // "grossPremium": "",
-    // "premiumRate": 5.00,
-    "transactionRef": "TRX123456789",
-    // "payMode": "Credit Card",
-    "submittedBy": "ajagz"
-}
-
-// {
-//      "customerDetails": {
-//         "title": "Mr",
-//         "firstName": "John",
-//         "surname": "Doe",
-//         "otherNames": "johndoe",
-//         "mobileNumber": "+2341234567890",
-//         "gender": "Male",
-//         "emailAddress": "johndoe@example.com",
-//         "dateOfBirth": "08/05/1995",
-//         "address": "123 Main Street, Lekki",
-//         "country": "Nigeria",
-//         "stateOfResidence": "Lagos",
-//         "meansId": "National ID",
-//         "meansIdNo": "NationalIdnumber",
-//         "idNumber": "12345678901",
-//         "userId": "JD001",
-//         "occupation": "Software Engineer",
-//         "submittedBy": "Agent007",
-//          "insuredType": "Individual"
-//     },
-//   "transactionRef": "",
-//   "subRisk": "",
-//   "startDate": "28/10/2023",
-//   "endDate": "28/10/2023",
-//   "duration": -1,
-//   "insuranceClass": "",
-//   "vehicleUsageType": "",
-//   "carMake": "",
-//   "carBrand": "",
-//   "carModel": "",
-//   "sumInsured": -1000,
-//   "submittedBy": ""
-// }
-
-// {
-//      "submittedBy": "USERD001"
-// }
-
-{
-    "transaction_ref": "123",
-    "debit_note_number": "123"
-}</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="3">
-                                     <div class="heading">
-                                        <div class="name">
-                                            <span class="POST method" >POST</span>
-                                            02. encrypt finance <span class="lock-icon"></span>
-                                        </div>
-                                     </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/encrypt</div>
-                                    
-                                    <div class="description request-description">
-                                        <p><p>This endpoint is a request to secure financial data such as account numbers, transaction details, and payment information.</p></p>
-                                    </div>
-                                    
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                            <div class="raw-body code-snippet">
-                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="02. encrypt finance">
-                                                  <code>
-                                                    
-{
-    "customerDetails": {
-        "title": "Mr",
-        "firstName": "James",
-        "middleName": "Bond",
-        "lastName": "Smith",
-        "mobileNumber": "09060644220",
-        "gender": "Male",
-        "emailAddress": "abc@gmail.com",
-        "dateOfBirth": "08/05/1995",
-        "address": "4 Tiwo Street, Aguda Surulere, Lagos, Nigeria",
-        "country": "Nigeria",
-        "stateOfResidence": "LA",
-        "meansOfId": "Drivers Licence",
-        "idNumber": "DL786655555",
-        "userId": "John12",
-        "occupation": "Trading"
-    },
-    "insuredId": "7890",
-    "insuredType": "Third Party",
-    "startDate": "28/10/2024",
-    "duration": 12,
-    "insuranceClass": "AUTO",
-    "vehicleUsageType": "PRIVATE",
-    "vehicleClass": "211",
-    "carMake": "Benz",
-    "carBrand": "Benz E320",
-    "carModel": "211",
-    "carColor": "Gray",
-    "carRegNo": "MK 256 AAA",
-    "engineNo": "WD8799091234",
-    "chassisNo": "WD129902424YQNDQ67D",
-    "vehicleRegState": "LA",
-    "sumInsured": 1000000,
-    "premium": 150000,
-    "premiumRate": 0,
-    "transactionRef": "TP8000120034098",
-    "payPin": "09129823763465",
-    "payMode": "Paystack",
-    "submitById": "John12"
-}
-                                                  </code>
-                                              </pre>
-                                            </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                    <div class="heading">
-                                        <span>Example Request</span>
-                                    </div>
-                                    <div class="responses-index">
-                                        <div class="dropdown response-name">
-                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">02. encrypt finance</span>
-                                                <span class="caret"></span>
-
-                                            </button>
-
-                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="3" data-response-info="response_3">02. encrypt finance</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
-                                    <div class="request code-snippet">
-                                        <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="02. encrypt finance">
-                                                <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/encrypt
-
-{
-    "customerDetails": {
-        "title": "Mr",
-        "firstName": "James",
-        "middleName": "Bond",
-        "lastName": "Smith",
-        "mobileNumber": "09060644220",
-        "gender": "Male",
-        "emailAddress": "abc@gmail.com",
-        "dateOfBirth": "08/05/1995",
-        "address": "4 Tiwo Street, Aguda Surulere, Lagos, Nigeria",
-        "country": "Nigeria",
-        "stateOfResidence": "LA",
-        "meansOfId": "Drivers Licence",
-        "idNumber": "DL786655555",
-        "userId": "John12",
-        "occupation": "Trading"
-    },
-    "insuredId": "7890",
-    "insuredType": "Third Party",
-    "startDate": "28/10/2024",
-    "duration": 12,
-    "insuranceClass": "AUTO",
-    "vehicleUsageType": "PRIVATE",
-    "vehicleClass": "211",
-    "carMake": "Benz",
-    "carBrand": "Benz E320",
-    "carModel": "211",
-    "carColor": "Gray",
-    "carRegNo": "MK 256 AAA",
-    "engineNo": "WD8799091234",
-    "chassisNo": "WD129902424YQNDQ67D",
-    "vehicleRegState": "LA",
-    "sumInsured": 1000000,
-    "premium": 150000,
-    "premiumRate": 0,
-    "transactionRef": "TP8000120034098",
-    "payPin": "09129823763465",
-    "payMode": "Paystack",
-    "submitById": "John12"
-}</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="4">
-                                     <div class="heading">
-                                        <div class="name">
-                                            <span class="POST method" >POST</span>
-                                            03. decrypt <span class="lock-icon"></span>
-                                        </div>
-                                     </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/decrypt</div>
-                                    
-                                    <div class="description request-description">
-                                        <p><p>The endpoint<code>decrypt</code>is a request to decipher insurance service data.</p>
-<p>It takes response from the encrypt function to fetch payload.</p></p>
-                                    </div>
-                                    
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                            <div class="raw-body code-snippet">
-                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="03. decrypt">
-                                                  <code>
-                                                    
-// {
-//     "response": "BgXJcErgcfyVtG/NbybOdIBhM6/q4wt2ptxd5vi3y+rCAWxSD8Sh1APJS3on0kIIB/APVotOvcdNAC2PvCg3dw=="
-// }
-{
-    "response": "Ao9cDuoljzbuG4GGcYdriYE36PlklzH+z4HGxZo1Y44jXSGP5oj21Eihwg7g9dehp4S5T4mAsSm9H2Ck3eMKfIzOG9KLHbYdN3S3l5yPA6c="
-}
-                                                  </code>
-                                              </pre>
-                                            </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                    <div class="heading">
-                                        <span>Example Request</span>
-                                    </div>
-                                    <div class="responses-index">
-                                        <div class="dropdown response-name">
-                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">03. decrypt</span>
-                                                <span class="caret"></span>
-
-                                            </button>
-
-                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="4" data-response-info="response_4">03. decrypt</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
-                                    <div class="request code-snippet">
-                                        <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="03. decrypt">
-                                                <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/decrypt
-
-// {
-//     "response": "BgXJcErgcfyVtG/NbybOdIBhM6/q4wt2ptxd5vi3y+rCAWxSD8Sh1APJS3on0kIIB/APVotOvcdNAC2PvCg3dw=="
-// }
-{
-    "response": "Ao9cDuoljzbuG4GGcYdriYE36PlklzH+z4HGxZo1Y44jXSGP5oj21Eihwg7g9dehp4S5T4mAsSm9H2Ck3eMKfIzOG9KLHbYdN3S3l5yPA6c="
-}</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="5">
-                                     <div class="heading">
-                                        <div class="name">
-                                            <span class="POST method" >POST</span>
-                                            04 buy insurance <span class="lock-icon"></span>
-                                        </div>
-                                     </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/buy</div>
-                                    
-                                    <div class="description request-description">
-                                        <p><p><code>buy insurance</code> function is used to purchase insurance coverage.</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -684,43 +208,48 @@ POST {{base_url}}/omnic/api/insuranceService/decrypt
 {
     "customerDetails": {
         "title": "Mr",
-        "firstName": "James",
-        "middleName": "Bond",
-        "lastName": "Smith",
-        "mobileNumber": "09060644220",
+        "firstName": "John",
+        "surname": "Doe",
+        "otherNames": "johndoe",
+        "mobileNumber": "+2341234567890",
         "gender": "Male",
-        "emailAddress": "abc@gmail.com",
+        "emailAddress": "aajagunna@chiplc.com",
         "dateOfBirth": "08/05/1995",
-        "address": "4 Tiwo Street, Aguda Surulere, Lagos, Nigeria",
+        "address": "123 Main Street, Lekki",
         "country": "Nigeria",
-        "stateOfResidence": "LA",
-        "meansOfId": "Drivers Licence",
-        "idNumber": "DL786655555",
-        "userId": "John12",
-        "occupation": "Trading"
+        "stateOfResidence": "Lagos",
+        "meansId": "National ID",
+        "meansIdNo": "NationalIdnumber",
+        "idNumber": "12345678901",
+        "userId": "JD001",
+        "occupation": "Software Engineer",
+        "submittedBy": "Agent007",
+        "insuredType": "Individual"
     },
-    "insuredId": "7890",
-    "insuredType": "Third Party",
-    "startDate": "28/10/2024",
-    "duration": 12,
-    "insuranceClass": "AUTO",
-    "vehicleUsageType": "PRIVATE",
-    "vehicleClass": "211",
-    "carMake": "Benz",
-    "carBrand": "Benz E320",
-    "carModel": "211",
-    "carColor": "Gray",
-    "carRegNo": "MK 256 AAA",
-    "engineNo": "WD8799091234",
-    "chassisNo": "WD129902424YQNDQ67D",
-    "vehicleRegState": "LA",
-    "sumInsured": 1000000,
-    "premium": 150000,
-    "premiumRate": 0,
-    "transactionRef": "TP8000120034098",
-    "payPin": "09129823763465",
-    "payMode": "Paystack",
-    "submitById": "John12"
+    "startDate": "06/12/2024",
+    "endDate": "06/12/2025",
+    "subRisk": "private motor",
+    "insuranceClass": "PRIVATE MOTOR",
+    "vehicleUsageType": "Private",
+    "carBrand": "GLK",
+    "carModel": "300",
+    "carColor": "Mettallic Gray",
+    "carRegNo": "KTU897Wm",
+    "engineNo": "1NXBR32E87Z123456",
+    "chassisNo": "1HGCM82633A123456",
+    "party": "Mayfair Insurance Brokers Limited",
+    "partyId": "1100195",
+    "vehicleRegState": "Lagos",
+    "vehicleType": "car",
+    "vehicleMake": "Benz",
+    "vehicleYear": "2024",
+    "sumInsured": 51000000.00,
+    "bizOption": "New",
+    "engineCapacity": "6l",
+    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
+    "paymentType": "Transfer",
+    "transactionRef": "TRX123456789",
+    "submittedBy": "ajagz"
 }
                                                   </code>
                                               </pre>
@@ -744,58 +273,63 @@ POST {{base_url}}/omnic/api/insuranceService/decrypt
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="5" data-response-info="response_5">04 buy insurance</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">04 buy insurance</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="04 buy insurance">
                                                 <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/buy
+POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
 
 {
     "customerDetails": {
         "title": "Mr",
-        "firstName": "James",
-        "middleName": "Bond",
-        "lastName": "Smith",
-        "mobileNumber": "09060644220",
+        "firstName": "John",
+        "surname": "Doe",
+        "otherNames": "johndoe",
+        "mobileNumber": "+2341234567890",
         "gender": "Male",
-        "emailAddress": "abc@gmail.com",
+        "emailAddress": "aajagunna@chiplc.com",
         "dateOfBirth": "08/05/1995",
-        "address": "4 Tiwo Street, Aguda Surulere, Lagos, Nigeria",
+        "address": "123 Main Street, Lekki",
         "country": "Nigeria",
-        "stateOfResidence": "LA",
-        "meansOfId": "Drivers Licence",
-        "idNumber": "DL786655555",
-        "userId": "John12",
-        "occupation": "Trading"
+        "stateOfResidence": "Lagos",
+        "meansId": "National ID",
+        "meansIdNo": "NationalIdnumber",
+        "idNumber": "12345678901",
+        "userId": "JD001",
+        "occupation": "Software Engineer",
+        "submittedBy": "Agent007",
+        "insuredType": "Individual"
     },
-    "insuredId": "7890",
-    "insuredType": "Third Party",
-    "startDate": "28/10/2024",
-    "duration": 12,
-    "insuranceClass": "AUTO",
-    "vehicleUsageType": "PRIVATE",
-    "vehicleClass": "211",
-    "carMake": "Benz",
-    "carBrand": "Benz E320",
-    "carModel": "211",
-    "carColor": "Gray",
-    "carRegNo": "MK 256 AAA",
-    "engineNo": "WD8799091234",
-    "chassisNo": "WD129902424YQNDQ67D",
-    "vehicleRegState": "LA",
-    "sumInsured": 1000000,
-    "premium": 150000,
-    "premiumRate": 0,
-    "transactionRef": "TP8000120034098",
-    "payPin": "09129823763465",
-    "payMode": "Paystack",
-    "submitById": "John12"
+    "startDate": "06/12/2024",
+    "endDate": "06/12/2025",
+    "subRisk": "private motor",
+    "insuranceClass": "PRIVATE MOTOR",
+    "vehicleUsageType": "Private",
+    "carBrand": "GLK",
+    "carModel": "300",
+    "carColor": "Mettallic Gray",
+    "carRegNo": "KTU897Wm",
+    "engineNo": "1NXBR32E87Z123456",
+    "chassisNo": "1HGCM82633A123456",
+    "party": "Mayfair Insurance Brokers Limited",
+    "partyId": "1100195",
+    "vehicleRegState": "Lagos",
+    "vehicleType": "car",
+    "vehicleMake": "Benz",
+    "vehicleYear": "2024",
+    "sumInsured": 51000000.00,
+    "bizOption": "New",
+    "engineCapacity": "6l",
+    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
+    "paymentType": "Transfer",
+    "transactionRef": "TRX123456789",
+    "submittedBy": "ajagz"
 }</code>
                                             </pre>
                                         </div>
@@ -806,7 +340,7 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/buy
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="6">
+                                <div class="api-information" id="3">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -857,12 +391,12 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/buy
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="6" data-response-info="response_6">05. get subrisks</li>
+                                                <li class="truncate" data-request-info="3" data-response-info="response_3">05. get subrisks</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="05. get subrisks">
@@ -879,129 +413,10 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/subrisks
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="7">
+                                <div class="api-information" id="4">
                                      <div class="heading">
                                         <div class="name">
-                                            <span class="POST method" >POST</span>
-                                            test <span class="lock-icon"></span>
-                                        </div>
-                                     </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/new</div>
-                                    
-                                    <div class="description request-description">
-                                        <p><p>This endpoint is used to submit a &ldquo;test&rdquo; request to purchase insurance.</p></p>
-                                    </div>
-                                    
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                            <div class="raw-body code-snippet">
-                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="test">
-                                                  <code>
-                                                    
-{
-    "request": "oPf5CcULM3hBUUxeaBqbEWHv850tisYSOTt/RFdM21AhzFDgxzxNbBpJcpTLUwgE96FYbohPAv4rJhonyTmiwQeIcLyGE2zZrWWJhJF/pBEfsUIiqDEmEPpQqPagx8wTiC0X714bbYmFq7KD/dbj3i08gpFSfeBRB4DD357VwVqx/UK0iHHuv+ewSNasH5iPRfXBF6D2OAHGIgX+kYSOm9cA4dQSIgyTgbHi4zhKCCx/klRjL6ddEeMDpMBYpaKOcDZCCrSSfgwnZYCSqqXx4z8l8Aq2SzELU39K2OPoS4tUWA4lawa8BjS7GvXVOX40vmYJqyyoEJ8P6w+8O5QIL6aTBRTxLrLPwxbRL2AMFBpQXSBV/7QwBekoBLmOU3Yolq2WO7PCej7rtFcJR+H7iS1+IhwjIH66GoDwUpmpi34ziKaLX4erkipIAHFajCYdgc3DyxF5kM3mdIFVH+7R3B+0JBmPK/Q/JTLCan3PbvDV1sfTuG0nR/5iwj/jwVnSiSsLVMABYv2ciRLgaInv6VAJzqmIdAQIWuK1j9u9gMnQL2mGNHbymniL5lkQkvGnucrwdbp8Vx+0NpNIAbUFLgnGQnM4Y4zr6SjvsmZKnKd82WCltH3awFWFRkMNqof5DfE2WFj575K23Rb2UAEsrRYVXR/sWVxwLPssvfI1ATXMlYYTbN7qHPDJotQNMuzjmCaTWNPZF9T4S/1oZe4RMqac0k53HPnpTZOp4B1fOezKBz1f77ECTqx9IMdhWDXe97PRVQWLAoPLprlvLjwWG+uImMF3bIom/KL7XOsPvcedHvcPJjUrGDWX7bgkeoXsv3lcyN0Sbm5hU7wRca3zwZgkK/Q1Vru6lpsQXuAo/yorOtio0LkwyqVCWlNnHGwn12jWtcscAfmlziGby0zvvpSXWQ6WUnTzl+6wiwiUxJeTCUvwfjc0YWzd69u9BE8gXaBO4KWmaYOOgCAJgSKfNnNpsbpnZbli0ArYCaCeFud7oXyrbrtqzp9MHgD9oitpa3cVp/u3cCpIbwORHPo8SnsCzPDUPsqsGJMEY+ApMgZ1x/CRKp8EQbSOGcwIn9AArrhsZ7/8ZqoJtk+ozFeILMkQJjwPKDybOSNQBAbNgZE/2Xdn6aPy2FQZxt2kDO8QN4maRDt3oE+txpa1bVsUr/jlYCoK8puRjfV7MxE8xFzgkHYFJzwQN4Ihd6kIqYhrp50xjEJnB8CIeIdkszrY7RXy43iK1WaHlg0qUPtkKl9zfv0ESWFVYPyHTMurJxM0Lj74QyQPdY+V0bm0y745NptGgEQT6aqza99WE9fJIkMX3soLbhxO9s8MMnKiHTRq9Oq5OzFtWnEn4gLIQNUmdpeK45rzJpBi8PNEmgkjUnZYhmg61NOwvKxHD7/Q6jutKU2PaK2BUN8b+JtCihs70Dc+pVskCb9T3ZUuhrmJh0f3FwibbVVErXN48UzH390XUPYmCdcq7CwwdLJ5bAvJXVnoOb0N+tg8xIBYNuPNCvg="
-}
-                                                  </code>
-                                              </pre>
-                                            </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                    <div class="heading">
-                                        <span>Example Request</span>
-                                    </div>
-                                    <div class="responses-index">
-                                        <div class="dropdown response-name">
-                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">test</span>
-                                                <span class="caret"></span>
-
-                                            </button>
-
-                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="7" data-response-info="response_7">test</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
-                                    <div class="request code-snippet">
-                                        <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="test">
-                                                <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
-
-{
-    "request": "oPf5CcULM3hBUUxeaBqbEWHv850tisYSOTt/RFdM21AhzFDgxzxNbBpJcpTLUwgE96FYbohPAv4rJhonyTmiwQeIcLyGE2zZrWWJhJF/pBEfsUIiqDEmEPpQqPagx8wTiC0X714bbYmFq7KD/dbj3i08gpFSfeBRB4DD357VwVqx/UK0iHHuv+ewSNasH5iPRfXBF6D2OAHGIgX+kYSOm9cA4dQSIgyTgbHi4zhKCCx/klRjL6ddEeMDpMBYpaKOcDZCCrSSfgwnZYCSqqXx4z8l8Aq2SzELU39K2OPoS4tUWA4lawa8BjS7GvXVOX40vmYJqyyoEJ8P6w+8O5QIL6aTBRTxLrLPwxbRL2AMFBpQXSBV/7QwBekoBLmOU3Yolq2WO7PCej7rtFcJR+H7iS1+IhwjIH66GoDwUpmpi34ziKaLX4erkipIAHFajCYdgc3DyxF5kM3mdIFVH+7R3B+0JBmPK/Q/JTLCan3PbvDV1sfTuG0nR/5iwj/jwVnSiSsLVMABYv2ciRLgaInv6VAJzqmIdAQIWuK1j9u9gMnQL2mGNHbymniL5lkQkvGnucrwdbp8Vx+0NpNIAbUFLgnGQnM4Y4zr6SjvsmZKnKd82WCltH3awFWFRkMNqof5DfE2WFj575K23Rb2UAEsrRYVXR/sWVxwLPssvfI1ATXMlYYTbN7qHPDJotQNMuzjmCaTWNPZF9T4S/1oZe4RMqac0k53HPnpTZOp4B1fOezKBz1f77ECTqx9IMdhWDXe97PRVQWLAoPLprlvLjwWG+uImMF3bIom/KL7XOsPvcedHvcPJjUrGDWX7bgkeoXsv3lcyN0Sbm5hU7wRca3zwZgkK/Q1Vru6lpsQXuAo/yorOtio0LkwyqVCWlNnHGwn12jWtcscAfmlziGby0zvvpSXWQ6WUnTzl+6wiwiUxJeTCUvwfjc0YWzd69u9BE8gXaBO4KWmaYOOgCAJgSKfNnNpsbpnZbli0ArYCaCeFud7oXyrbrtqzp9MHgD9oitpa3cVp/u3cCpIbwORHPo8SnsCzPDUPsqsGJMEY+ApMgZ1x/CRKp8EQbSOGcwIn9AArrhsZ7/8ZqoJtk+ozFeILMkQJjwPKDybOSNQBAbNgZE/2Xdn6aPy2FQZxt2kDO8QN4maRDt3oE+txpa1bVsUr/jlYCoK8puRjfV7MxE8xFzgkHYFJzwQN4Ihd6kIqYhrp50xjEJnB8CIeIdkszrY7RXy43iK1WaHlg0qUPtkKl9zfv0ESWFVYPyHTMurJxM0Lj74QyQPdY+V0bm0y745NptGgEQT6aqza99WE9fJIkMX3soLbhxO9s8MMnKiHTRq9Oq5OzFtWnEn4gLIQNUmdpeK45rzJpBi8PNEmgkjUnZYhmg61NOwvKxHD7/Q6jutKU2PaK2BUN8b+JtCihs70Dc+pVskCb9T3ZUuhrmJh0f3FwibbVVErXN48UzH390XUPYmCdcq7CwwdLJ5bAvJXVnoOb0N+tg8xIBYNuPNCvg="
-}</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="8">
-                                     <div class="heading">
-                                        <div class="name">
-                                            <span class="POST method" >POST</span>
-                                            06. thirparty <span class="lock-icon"></span>
-                                        </div>
-                                     </div>
-                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/thirdparty</div>
-                                    
-                                    <div class="description request-description">
-                                        <p><p>This endpoint interacts with a third-party service to perform.</p>
-<p>Functions include actions such as processing payments, fetching external data, validating transactions, and integrating with a third-party API. The third-party service is responsible for the actual operation, and this endpoint acts as a middle layer.</p></p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                    <div class="heading">
-                                        <span>Example Request</span>
-                                    </div>
-                                    <div class="responses-index">
-                                        <div class="dropdown response-name">
-                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">06. thirparty</span>
-                                                <span class="caret"></span>
-
-                                            </button>
-
-                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="8" data-response-info="response_8">06. thirparty</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
-                                    <div class="request code-snippet">
-                                        <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="06. thirparty">
-                                                <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/thirdparty</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="9">
-                                     <div class="heading">
-                                        <div class="name">
-                                            <span class="POST method" >POST</span>
+                                            <span class="GET method" >GET</span>
                                             07. get car make <span class="lock-icon"></span>
                                         </div>
                                      </div>
@@ -1027,17 +442,17 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/thirdparty</code>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="9" data-response-info="response_9">07. get car make</li>
+                                                <li class="truncate" data-request-info="4" data-response-info="response_4">07. get car make</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="9"  data-id="response_9">
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="07. get car make">
                                                 <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
+GET {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1047,10 +462,10 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="10">
+                                <div class="api-information" id="5">
                                      <div class="heading">
                                         <div class="name">
-                                            <span class="POST method" >POST</span>
+                                            <span class="GET method" >GET</span>
                                             08. get car model by id <span class="lock-icon"></span>
                                         </div>
                                      </div>
@@ -1089,17 +504,17 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="10" data-response-info="response_10">08. get car model by id</li>
+                                                <li class="truncate" data-request-info="5" data-response-info="response_5">08. get car model by id</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="10"  data-id="response_10">
+                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="08. get car model by id">
                                                 <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
+GET {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1109,10 +524,10 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="11">
+                                <div class="api-information" id="6">
                                      <div class="heading">
                                         <div class="name">
-                                            <span class="POST method" >POST</span>
+                                            <span class="GET method" >GET</span>
                                             09. get outstanding payments <span class="lock-icon"></span>
                                         </div>
                                      </div>
@@ -1161,17 +576,17 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="11" data-response-info="response_11">09. get outstanding payments</li>
+                                                <li class="truncate" data-request-info="6" data-response-info="response_6">09. get outstanding payments</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="11"  data-id="response_11">
+                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="09. get outstanding payments">
                                                 <code class="is-highlighted">
-POST {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
+GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
 
 // {
 //      "submittedBy": "paddycover"
@@ -1192,7 +607,7 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="12">
+                                <div class="api-information" id="7">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -1235,12 +650,12 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="12" data-response-info="response_12">10. get products</li>
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">10. get products</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="12"  data-id="response_12">
+                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="10. get products">
@@ -1257,7 +672,7 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/products
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="13">
+                                <div class="api-information" id="8">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -1300,12 +715,12 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/products
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="13" data-response-info="response_13">11 get products Class</li>
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">11 get products Class</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="13"  data-id="response_13">
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="11 get products Class">
@@ -1322,7 +737,7 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/products/ag
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="14">
+                                <div class="api-information" id="9">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="POST method" >POST</span>
@@ -1366,12 +781,12 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/products/ag
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="14" data-response-info="response_14">12 paymentConfirmation</li>
+                                                <li class="truncate" data-request-info="9" data-response-info="response_9">12 paymentConfirmation</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="14"  data-id="response_14">
+                                <div class="formatted-requests " data-request-id="9"  data-id="response_9">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="12 paymentConfirmation">
@@ -1388,7 +803,7 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="15">
+                                <div class="api-information" id="10">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -1431,12 +846,12 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="15" data-response-info="response_15">getVoyageType</li>
+                                                <li class="truncate" data-request-info="10" data-response-info="response_10">getVoyageType</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests " data-request-id="15"  data-id="response_15">
+                                <div class="formatted-requests " data-request-id="10"  data-id="response_10">
                                     <div class="request code-snippet">
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="getVoyageType">
@@ -1468,7 +883,7 @@ GET https://localhost:8445/omnic/api/insuranceService/insurance/voyageTypes
     <script src="js/bootstrap-treeview.min.js"></script>
     <script src="js/main.min.js"></script>
     <script type="application/javascript">
-        var data = [{'text': '01. get access token', 'href': '#1', 'method': 'POST'}, {'text': '02. encrypt', 'href': '#2', 'method': 'POST'}, {'text': '02. encrypt finance', 'href': '#3', 'method': 'POST'}, {'text': '03. decrypt', 'href': '#4', 'method': 'POST'}, {'text': '04 buy insurance', 'href': '#5', 'method': 'POST'}, {'text': '05. get subrisks', 'href': '#6', 'method': 'GET'}, {'text': 'test', 'href': '#7', 'method': 'POST'}, {'text': '06. thirparty', 'href': '#8', 'method': 'POST'}, {'text': '07. get car make', 'href': '#9', 'method': 'POST'}, {'text': '08. get car model by id', 'href': '#10', 'method': 'POST'}, {'text': '09. get outstanding payments', 'href': '#11', 'method': 'POST'}, {'text': '10. get products', 'href': '#12', 'method': 'GET'}, {'text': '11 get products Class', 'href': '#13', 'method': 'GET'}, {'text': '12 paymentConfirmation', 'href': '#14', 'method': 'POST'}, {'text': 'getVoyageType', 'href': '#15', 'method': 'GET'}]
+        var data = [{'text': '01. get access token', 'href': '#1', 'method': 'POST'}, {'text': '04 buy insurance', 'href': '#2', 'method': 'POST'}, {'text': '05. get subrisks', 'href': '#3', 'method': 'GET'}, {'text': '07. get car make', 'href': '#4', 'method': 'GET'}, {'text': '08. get car model by id', 'href': '#5', 'method': 'GET'}, {'text': '09. get outstanding payments', 'href': '#6', 'method': 'GET'}, {'text': '10. get products', 'href': '#7', 'method': 'GET'}, {'text': '11 get products Class', 'href': '#8', 'method': 'GET'}, {'text': '12 paymentConfirmation', 'href': '#9', 'method': 'POST'}, {'text': 'getVoyageType', 'href': '#10', 'method': 'GET'}]
         $('#tree').treeview({
             data: data,
             levels: 10,
