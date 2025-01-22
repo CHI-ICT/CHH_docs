@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free bootstrap documentation template">
+    <title>CHH_production</title>
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- using local links -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/sidebar-themes.min.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="css/postman.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
+
+<body>
+    <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span id="closeModal" aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand text-white font-weight-bold">API Documentation</div>
+                <!-- sidebar-header  -->
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <div id="tree"></div>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+        </nav>
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center p-3 border-bottom">
+                    <div class="col-md-1">
+                        <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a>
+                    </div>
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2 text-left">
+                    </div>
+                </div>
+                <div class="row p-lg-4">
+                    <article class="main-content col-md-12 pr-lg-9" id="doc-body">
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="api-information">
+                                    <div class="collection-name">
+                                        <p>CHH_production</p>
+                                    </div>
+                                    <div class="collection-description">
+                                        <p>This workspace provides a collection of endpoints designed  
+for encryption and decryption operations, offering secure methods for  
+safeguarding data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="1">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            01. get access token <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/token/generate-token</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>The<code>get access token</code>endpoint is used to generate a token.</p>
+<h3 id="authorization">Authorization:</h3>
+<ul>
+<li>No Auth</li>
+</ul>
+<h3 id="required">Required:</h3>
+<ul>
+<li>
+<p><code>userName</code>: The username of the user.</p>
+</li>
+<li>
+<p><code>password</code>: The password of the user.</p>
+</li>
+</ul></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="01. get access token">
+                                                  <code>
+                                                    
+{
+    "userName": "USERD001",
+    "password": "AmSecret5x"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">01. get access token</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="1" data-response-info="response_1">01. get access token</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="1"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="01. get access token">
+                                                <code class="is-highlighted">
+POST {{base_url}}/omnic/api/token/generate-token
+
+{
+    "userName": "USERD001",
+    "password": "AmSecret5x"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="2">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            04 buy insurance <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/new</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p><code>buy insurance</code> function is used to purchase insurance coverage.</p>
+<p><u><b>Required:</b></u></p>
+<p>Run the <code>get subrisks</code> endpoint first. This step is necessary to retrieve the available options for the <code>insuranceClass</code>. Once the subrisk options are retrieved, select the appropriate <code>insuranceClass</code> value and include it in the payload for the subsequent request.</p>
+<p><u>Sample code:</u> insuranceClass: &ldquo;PRIVATE COMPREHENSIVE&rdquo;</p>
+<p><u>Validation Rules:</u></p>
+<ul>
+<li>
+<p><code>Date</code>: The date should be in day/month/year format (e.g., 12/01/2025).</p>
+</li>
+<li>
+<p><code>Car Registration No.</code>: The car registration number must <strong>not be greater than</strong> <strong>11 characters</strong>.</p>
+</li>
+<li>
+<p><code>Chasis Number</code>: The chasis number must <strong>not</strong> contain the letters &ldquo;I&rdquo; and &ldquo;O&rdquo;.</p>
+</li>
+</ul>
+<p>The length of the chasis number must not be more <strong>than</strong> <strong>17 characters</strong>.</p>
+<ul>
+<li><code>Sum Insured Type</code>: The sum insured should be <strong>numeric</strong> (i.e., a number)</li>
+</ul></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="04 buy insurance">
+                                                  <code>
+                                                    
+{
+    "customerDetails": {
+        "title": "Mr",
+        "firstName": "John",
+        "surname": "Doe",
+        "otherNames": "johndoe",
+        "mobileNumber": "+2341234567890",
+        "gender": "Male",
+        "emailAddress": "aajagunna@chiplc.com",
+        "dateOfBirth": "08/05/1995",
+        "address": "123 Main Street, Lekki",
+        "country": "Nigeria",
+        "stateOfResidence": "Lagos",
+        "meansId": "National ID",
+        "meansIdNo": "NationalIdnumber",
+        "idNumber": "12345678901",
+        "userId": "JD001",
+        "occupation": "Software Engineer",
+        "submittedBy": "Agent007",
+        "insuredType": "Individual"
+    },
+    "startDate": "06/12/2024",
+    "endDate": "06/12/2025",
+    "subRisk": "private motor",
+    "insuranceClass": "PRIVATE MOTOR",
+    "vehicleUsageType": "Private",
+    "carBrand": "GLK",
+    "carModel": "300",
+    "carColor": "Mettallic Gray",
+    "carRegNo": "KTU897Wm",
+    "engineNo": "1NXBR32E87Z123456",
+    "chassisNo": "1HGCM82633A123456",
+    "party": "Mayfair Insurance Brokers Limited",
+    "partyId": "1100195",
+    "vehicleRegState": "Lagos",
+    "vehicleType": "car",
+    "vehicleMake": "Benz",
+    "vehicleYear": "2024",
+    "sumInsured": 51000000.00,
+    "bizOption": "New",
+    "engineCapacity": "6l",
+    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
+    "paymentType": "Transfer",
+    "transactionRef": "TRX123456789",
+    "submittedBy": "ajagz"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">04 buy insurance</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">04 buy insurance</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="04 buy insurance">
+                                                <code class="is-highlighted">
+POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
+
+{
+    "customerDetails": {
+        "title": "Mr",
+        "firstName": "John",
+        "surname": "Doe",
+        "otherNames": "johndoe",
+        "mobileNumber": "+2341234567890",
+        "gender": "Male",
+        "emailAddress": "aajagunna@chiplc.com",
+        "dateOfBirth": "08/05/1995",
+        "address": "123 Main Street, Lekki",
+        "country": "Nigeria",
+        "stateOfResidence": "Lagos",
+        "meansId": "National ID",
+        "meansIdNo": "NationalIdnumber",
+        "idNumber": "12345678901",
+        "userId": "JD001",
+        "occupation": "Software Engineer",
+        "submittedBy": "Agent007",
+        "insuredType": "Individual"
+    },
+    "startDate": "06/12/2024",
+    "endDate": "06/12/2025",
+    "subRisk": "private motor",
+    "insuranceClass": "PRIVATE MOTOR",
+    "vehicleUsageType": "Private",
+    "carBrand": "GLK",
+    "carModel": "300",
+    "carColor": "Mettallic Gray",
+    "carRegNo": "KTU897Wm",
+    "engineNo": "1NXBR32E87Z123456",
+    "chassisNo": "1HGCM82633A123456",
+    "party": "Mayfair Insurance Brokers Limited",
+    "partyId": "1100195",
+    "vehicleRegState": "Lagos",
+    "vehicleType": "car",
+    "vehicleMake": "Benz",
+    "vehicleYear": "2024",
+    "sumInsured": 51000000.00,
+    "bizOption": "New",
+    "engineCapacity": "6l",
+    "narration": "BEING PREMIUM DUE ON GPA POLICY THROUGH PADDYCOVER ONLINE CHANNEL",
+    "paymentType": "Transfer",
+    "transactionRef": "TRX123456789",
+    "submittedBy": "ajagz"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="3">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            05. get subrisks <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/subrisks</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>The endpoint retrieves a list of subrisks related to insurance from the server. The response is a JSON array containing the subrisks.</p>
+<p>``` json<br>
+{<br>
+  &ldquo;type&rdquo;: &ldquo;array&rdquo;,<br>
+  &ldquo;items&rdquo;: {<br>
+    &ldquo;type&rdquo;: &ldquo;string&rdquo;<br>
+  }<br>
+}</p>
+<p>```</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="05. get subrisks">
+                                                  <code>
+                                                    
+
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">05. get subrisks</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="3" data-response-info="response_3">05. get subrisks</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="05. get subrisks">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/subrisks
+
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="4">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            07. get car make <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/carmake</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p><code>get car make</code> function retrieves a list of car makes (brands) from the database.</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">07. get car make</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="4" data-response-info="response_4">07. get car make</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="07. get car make">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="5">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            08. get car model by id <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>This endpoint retrieves information about a specific car model based on the provided car model ID.</p>
+<p>It returns the car model&rsquo;s characteristics, such as make, year, engine type, and other specifications.</p>
+<p><strong>REQUIRED PARAMETER:</strong><br>
+- model ID: The unique identifier for the car model you want to retrieve.</p>
+<p><strong>EXAMPLE RESPONSE(json)</strong></p>
+<p>{<br>
+&ldquo;modelId&rdquo;: 123,<br>
+&ldquo;make&rdquo;: &ldquo;Toyota&rdquo;,<br>
+&ldquo;model&rdquo;: &ldquo;Corolla&rdquo;,<br>
+&ldquo;year&rdquo;: 2020,<br>
+&ldquo;engineType&rdquo;: &ldquo;Hybrid&rdquo;,<br>
+&ldquo;color&rdquo;: &ldquo;Blue&rdquo;,<br>
+&ldquo;price&rdquo;: 25000<br>
+}</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">08. get car model by id</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="5" data-response-info="response_5">08. get car model by id</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="08. get car model by id">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="6">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            09. get outstanding payments <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p><code>get outstanding payments</code> retrieves a list of outstanding payments that have not yet been processed or paid.</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="09. get outstanding payments">
+                                                  <code>
+                                                    
+// {
+//      "submittedBy": "paddycover"
+//     //  "startDate": "2019-09-25",
+//     //  "endDate": "2020-10-25"
+
+// }
+
+{
+    "request": "n+I3CADffA8/otbLj6BuQfvMhMPOIWM/jPaEQ2CDYzI="
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">09. get outstanding payments</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="6" data-response-info="response_6">09. get outstanding payments</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="09. get outstanding payments">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
+
+// {
+//      "submittedBy": "paddycover"
+//     //  "startDate": "2019-09-25",
+//     //  "endDate": "2020-10-25"
+
+// }
+
+{
+    "request": "n+I3CADffA8/otbLj6BuQfvMhMPOIWM/jPaEQ2CDYzI="
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="7">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            10. get products <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/products</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>This function retrieves a list of products from the database.</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="10. get products">
+                                                  <code>
+                                                    
+
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">10. get products</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">10. get products</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="10. get products">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/products
+
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="8">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            11 get products Class <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/products/ag</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p><code>get products Class</code> fetches a list of product classes or categories available in the system.</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="11 get products Class">
+                                                  <code>
+                                                    
+
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">11 get products Class</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">11 get products Class</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="11 get products Class">
+                                                <code class="is-highlighted">
+GET {{base_url}}/omnic/api/insuranceService/insurance/products/ag
+
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="9">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            12 paymentConfirmation <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/confirmPayment</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>This endpoint confirms that a payment has been successfully processed.</p>
+<p>It returns details of the payment status, including whether the payment was successful, pending, or failed, as well as transaction details like the payment ID and amount.</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="12 paymentConfirmation">
+                                                  <code>
+                                                    
+{"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">12 paymentConfirmation</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="9" data-response-info="response_9">12 paymentConfirmation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="9"  data-id="response_9">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="12 paymentConfirmation">
+                                                <code class="is-highlighted">
+POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
+
+{"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="10">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            getVoyageType <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://localhost:8445/omnic/api/insuranceService/insurance/voyageTypes</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p>This endpoint retrieves the available types of voyages, such as by sea, or by air.</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="getVoyageType">
+                                                  <code>
+                                                    
+{"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">getVoyageType</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="10" data-response-info="response_10">getVoyageType</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="10"  data-id="response_10">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="getVoyageType">
+                                                <code class="is-highlighted">
+GET https://localhost:8445/omnic/api/insuranceService/insurance/voyageTypes
+
+{"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-treeview.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script type="application/javascript">
+        var data = [{'text': '01. get access token', 'href': '#1', 'method': 'POST'}, {'text': '04 buy insurance', 'href': '#2', 'method': 'POST'}, {'text': '05. get subrisks', 'href': '#3', 'method': 'GET'}, {'text': '07. get car make', 'href': '#4', 'method': 'GET'}, {'text': '08. get car model by id', 'href': '#5', 'method': 'GET'}, {'text': '09. get outstanding payments', 'href': '#6', 'method': 'GET'}, {'text': '10. get products', 'href': '#7', 'method': 'GET'}, {'text': '11 get products Class', 'href': '#8', 'method': 'GET'}, {'text': '12 paymentConfirmation', 'href': '#9', 'method': 'POST'}, {'text': 'getVoyageType', 'href': '#10', 'method': 'GET'}]
+        $('#tree').treeview({
+            data: data,
+            levels: 10,
+            expandIcon: 'fas fa-caret-right',
+            collapseIcon: 'fas fa-caret-down',
+            enableLinks: true,
+            showIcon: true,
+            showMethod: true
+        });
+    </script>
+
+</body>
+
+</html>
