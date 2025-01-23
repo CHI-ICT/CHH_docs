@@ -73,9 +73,9 @@
                                         <p>CHH_REST_API</p>
                                     </div>
                                     <div class="collection-description">
-                                        <p>Lists of endpoints to process insurance business with Consolidated Hallmark Insurance
+                                        <p>Lists of endpoints to process insurance business with Consolidated Hallmark Insurance.
 
-**base_url:** - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
+base_url:  https://test.chiplc.com:8445</p>
                                     </div>
                                 </div>
                             </div>
@@ -375,6 +375,10 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
                                     
                                     <div class="description request-description">
                                         <p><p>The endpoint retrieves a list of subrisks.</p>
+<p><u><b>Method:</b></u> <code>GET</code></p>
+<ul>
+<li><strong>Success Status Code:</strong> 200 OK</li>
+</ul>
 <p><u><b>Response Body:</b></u></p>
 <p>[</p>
 <p>&ldquo;COMMERCIAL VEHICLE BUS&rdquo;,</p>
@@ -386,7 +390,15 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
 <p>&ldquo;MOTOR TRADE&rdquo;,</p>
 <p>&ldquo;MOTOR INSURANCE THIRD PARTY&rdquo;,</p>
 <p>&ldquo;PRIVATE MOTOR&rdquo;</p>
-<p>]</p></p>
+<p>]</p>
+<ul>
+<li><strong>Error Status Code:</strong> 500 Internal Server Error</li>
+</ul>
+<p><u><b>Response Body:</b></u></p>
+<p>{<br>
+&ldquo;status&rdquo;: &ldquo;error&rdquo;,<br>
+&ldquo;message&rdquo;: &ldquo;Failed to retrieve subrisks.&rdquo;<br>
+}</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -452,19 +464,31 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/subrisks
                                     
                                     <div class="description request-description">
                                         <p><p><code>get car make</code> function retrieves a list of car makes (brands).</p>
+<p><u><b>Method:</b></u> <code>GET</code></p>
+<ul>
+<li><strong>Success Status Code:</strong> 200 OK</li>
+</ul>
 <p><u><b>Response Body:</b></u></p>
-<p>[</p>
-<p>{</p>
-<p>&ldquo;id&rdquo;: 1,</p>
-<p>&ldquo;carId&rdquo;: 1,</p>
-<p>&ldquo;cars&rdquo;: &ldquo;ACURA&rdquo;</p>
-<p>},</p>
-<p>{</p>
-<p>&ldquo;id&rdquo;: 2,</p>
-<p>&ldquo;carId&rdquo;: 2,</p>
-<p>&ldquo;cars&rdquo;: &ldquo;ALFA ROMEO&rdquo;</p>
-<p>}</p>
-<p>]</p></p>
+<p>[<br>
+{<br>
+&ldquo;id&rdquo;: 1,<br>
+&ldquo;carId&rdquo;: 1,<br>
+&ldquo;cars&rdquo;: &ldquo;ACURA&rdquo;<br>
+},<br>
+{<br>
+&ldquo;id&rdquo;: 2,<br>
+&ldquo;carId&rdquo;: 2,<br>
+&ldquo;cars&rdquo;: &ldquo;ALFA ROMEO&rdquo;<br>
+}<br>
+]</p>
+<ul>
+<li><strong>Error Status Code:</strong> 500 Internal Server Error</li>
+</ul>
+<p><u><b>Response Body:</b></u><br>
+{<br>
+&ldquo;status&rdquo;: &ldquo;error&rdquo;,<br>
+&ldquo;message&rdquo;: &ldquo;Failed to retrieve car makes.&rdquo;<br>
+}</p></p>
                                     </div>
                                     
                                 </div>
@@ -515,12 +539,24 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
                                     <div class="description request-description">
                                         <p><p>This endpoint retrieves a specific car model based on the provided carID.</p>
 <p>- carID: The unique identifier for the car model you want to retrieve.</p>
-<p><strong>Response Body: -</strong></p>
-<p>{</p>
-<p>&ldquo;id&rdquo;: 1523,</p>
-<p>&ldquo;carId&rdquo;: 48,</p>
-<p>&ldquo;cars&rdquo;: &ldquo;4RUNNER&rdquo;</p>
-<p>}</p></p>
+<p><u><b>Method</b></u><strong>:</strong> <code>GET</code></p>
+<ul>
+<li><strong>Success Status Code:</strong> 200 OK</li>
+</ul>
+<p><u><b>Response Body:</b></u> <strong>-</strong></p>
+<p>{<br>
+&ldquo;id&rdquo;: 1523,<br>
+&ldquo;carId&rdquo;: 48,<br>
+&ldquo;cars&rdquo;: &ldquo;4RUNNER&rdquo;<br>
+}</p>
+<ul>
+<li><strong>Error Status Code:</strong> 500 Internal Server Error</li>
+</ul>
+<p><u><b>Response Body:</b></u> <strong>-</strong><br>
+{<br>
+&ldquo;status&rdquo;: &ldquo;error&rdquo;,<br>
+&ldquo;message&rdquo;: &ldquo;Car model not found.&rdquo;<br>
+}</p></p>
                                     </div>
                                     
                                 </div>
@@ -570,11 +606,24 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
                                     
                                     <div class="description request-description">
                                         <p><p><code>get outstanding payments</code> retrieves a list of debit notes and net amounts that have not yet been processed or paid.</p>
+<p><u><b>Method</b></u><strong>:</strong> <code>GET</code></p>
+<ul>
+<li><strong>Status Code:</strong> 200 OK</li>
+</ul>
 <p><u>Response Body</u>: -</p>
-<p>{</p>
-<p>&ldquo;dncnNo&rdquo;: &ldquo;String&rdquo;,</p>
-<p>&ldquo;netAmount&rdquo;: number</p>
-<p>}</p></p>
+<p>{<br>
+&ldquo;dncnNo&rdquo;: &ldquo;String&rdquo;,<br>
+&ldquo;netAmount&rdquo;: number<br>
+}</p>
+<ul>
+<li><strong>Error:</strong></li>
+</ul>
+<p><strong>Status Code:</strong> 500 Internal Server Error<br>
+<u>Response Body</u>: -<br>
+{<br>
+&ldquo;status&rdquo;: &ldquo;error&rdquo;,<br>
+&ldquo;message&rdquo;: &ldquo;Failed to retrieve outstanding payments.&rdquo;<br>
+}</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -709,7 +758,11 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
                                     <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/renewal</div>
                                     
                                     <div class="description request-description">
-                                        <p><p><code>renew policy</code> endpoint is used to renew an insurance coverage.</p>
+                                        <p><p><code>renew policy</code> endpoint is used to renew an existing insurance coverage.</p>
+<p><u><b>Method</b></u><strong>:</strong> <code>POST</code></p>
+<ul>
+<li><strong>Success Status Code:</strong> 200 OK</li>
+</ul>
 <p><u><b>Response Body</b></u><br>
 [<br>
 &ldquo;responseCode&rdquo;: &ldquo;string&rdquo;,<br>
@@ -721,7 +774,19 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
 &ldquo;premiumAmount&rdquo;: 0.00,<br>
 &ldquo;commissionRate&rdquo;: 0<br>
 }<br>
-]</p></p>
+]</p>
+<p><strong>Error:</strong></p>
+<ul>
+<li>
+<p><strong>Status Code:</strong> 400 Bad Request (if the request data is invalid)</p>
+</li>
+<li>
+<p><strong>Status Code:</strong> 404 Not Found (if the policy to be renewed is not found)</p>
+</li>
+<li>
+<p><strong>Status Code:</strong> 500 Internal Server Error (if an error occurs during the renewal process)</p>
+</li>
+</ul></p>
                                     </div>
                                     
                                     <div class="request-body">
