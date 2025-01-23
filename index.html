@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free bootstrap documentation template">
-    <title>CHH_production</title>
+    <title>CHH_REST_API</title>
     <!-- using online links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -70,16 +70,12 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="api-information">
                                     <div class="collection-name">
-                                        <p>CHH_production</p>
+                                        <p>CHH_REST_API</p>
                                     </div>
                                     <div class="collection-description">
-                                        <p>This workspace provides a collection of endpoints designed  
-for encryption and decryption operations, offering secure methods for  
-safeguarding data.
+                                        <p>Lists of endpoints to process insurance business with Consolidated Hallmark Insurance
 
-### <u><b>Required:</b></u>
-
-base_url: - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
+**base_url:** - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
                                     </div>
                                 </div>
                             </div>
@@ -97,19 +93,27 @@ base_url: - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
                                     
                                     <div class="description request-description">
                                         <p><p>The<code>get access token</code>endpoint is used to generate a token.</p>
-<h3 id="authorization">Authorization:</h3>
+<p><strong>How to Get an Access Token</strong></p>
+<h3 id="authorization">Authorization</h3>
 <ul>
 <li>No Auth</li>
 </ul>
-<h3 id="required">Required:</h3>
+<h3 id="required-inputs">Required Inputs</h3>
 <ul>
 <li>
 <p><code>userName</code>: The user&rsquo;s username.</p>
 </li>
 <li>
-<p><code>password</code>: The password of the user.</p>
+<p><code>password</code>: The user&rsquo;s password.</p>
 </li>
-</ul></p>
+</ul>
+<h3 id="response-body">Response Body</h3>
+<p>You will receive a JSON Web Token in the response:<br>
+&ldquo;{{vault:json-web-token}}&rdquo;</p>
+<h3 id="set-the-token-for-authorization">Set the Token for Authorization</h3>
+<p>access_token must be passed to all endpoints.<br>
+<u>Example:</u><br>
+bearer-token={{vault:json-web-token}}</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -120,8 +124,8 @@ base_url: - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
                                                   <code>
                                                     
 {
-    "userName": "USERD001",
-    "password": "AmSecret5x"
+    "userName": "String",
+    "password": "String"
 }
                                                   </code>
                                               </pre>
@@ -158,8 +162,8 @@ base_url: - [https://test.chiplc.com:8445](https://test.chiplc.com:8445)</p>
 POST {{base_url}}/omnic/api/token/generate-token
 
 {
-    "userName": "USERD001",
-    "password": "AmSecret5x"
+    "userName": "String",
+    "password": "String"
 }</code>
                                             </pre>
                                         </div>
@@ -180,11 +184,15 @@ POST {{base_url}}/omnic/api/token/generate-token
                                     <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/new</div>
                                     
                                     <div class="description request-description">
-                                        <p><p><code>buy insurance</code> function is used to purchase insurance coverage.</p>
-<p><u><b>Required:</b></u></p>
-<p>Run the <code>get subrisks</code> endpoint first. This step is necessary to retrieve the available options for the <code>insuranceClass</code>. Once the subrisk options are retrieved, select the appropriate <code>insuranceClass</code> value and include it in the payload for the subsequent request.</p>
-<p><u>Sample code:</u> insuranceClass: &ldquo;PRIVATE COMPREHENSIVE&rdquo;</p>
-<p><u>Validation Rules:</u></p>
+                                        <p><p><code>buy insurance</code> endpoint is used to buy a new policy.</p>
+<p><u><b>Buy Policy:</b></u></p>
+<p><strong>Get Available Insurance Options</strong><br>
+Use the &ldquo;get subrisks&rdquo; endpoint to retrieve insurance options based on the &ldquo;Insurance Class&rdquo; you need.<br>
+<strong>Select Insurance Class</strong><br>
+Choose an insurance class, for example:<code>insuranceClass: "PRIVATE COMPREHENSIVE"</code><br>
+<strong>Send the Request</strong><br>
+Include the selected insurance class and other required details in the payload to proceed with the purchase.</p>
+<p><u><b>Validation Rules for Input:</b></u></p>
 <ul>
 <li>
 <p><code>Date</code>: The date should be in day/month/year format (e.g., 12/01/2025).</p>
@@ -199,7 +207,19 @@ POST {{base_url}}/omnic/api/token/generate-token
 <p>The length of the chasis number must not be more <strong>than</strong> <strong>17 characters</strong>.</p>
 <ul>
 <li><code>Sum Insured Type</code>: The sum insured should be <strong>numeric</strong> (i.e., a number)</li>
-</ul></p>
+</ul>
+<p><u><b>Response Body</b></u><br>
+[<br>
+&ldquo;responseCode&rdquo;: &ldquo;string&rdquo;,<br>
+&ldquo;status&rdquo;: boolean,<br>
+&ldquo;message&rdquo;: &ldquo;string&rdquo;,<br>
+&ldquo;data&rdquo;: {<br>
+&ldquo;debitNoteNumber&rdquo;: 0,<br>
+&ldquo;sumInsured&rdquo;: 0.00,<br>
+&ldquo;premiumAmount&rdquo;: 0.00,<br>
+&ldquo;commissionRate&rdquo;: 0<br>
+}<br>
+]</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -354,7 +374,19 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/policy/new
                                     <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/subrisks</div>
                                     
                                     <div class="description request-description">
-                                        <p><p>The endpoint retrieves a list of subrisks.</p></p>
+                                        <p><p>The endpoint retrieves a list of subrisks.</p>
+<p><u><b>Response Body:</b></u></p>
+<p>[</p>
+<p>&ldquo;COMMERCIAL VEHICLE BUS&rdquo;,</p>
+<p>&ldquo;COMMERCIAL VEHICLE GENERAL CARTAGE&rdquo;,</p>
+<p>&ldquo;COMMERCIAL VEHICLE OWN GOODS&rdquo;,</p>
+<p>&ldquo;COMMERCIAL VEHICLE SPECIAL TYPES&rdquo;, &ldquo;COMMERCIAL VEHICLE TAXI&rdquo;,</p>
+<p>&ldquo;ENHANCED MOTOR THIRD PARTY&rdquo;,</p>
+<p>&ldquo;MOTOR CYCLES&rdquo;,</p>
+<p>&ldquo;MOTOR TRADE&rdquo;,</p>
+<p>&ldquo;MOTOR INSURANCE THIRD PARTY&rdquo;,</p>
+<p>&ldquo;PRIVATE MOTOR&rdquo;</p>
+<p>]</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -419,7 +451,20 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/subrisks
                                     <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/carmake</div>
                                     
                                     <div class="description request-description">
-                                        <p><p><code>get car make</code> function retrieves a list of car makes (brands).</p></p>
+                                        <p><p><code>get car make</code> function retrieves a list of car makes (brands).</p>
+<p><u><b>Response Body:</b></u></p>
+<p>[</p>
+<p>{</p>
+<p>&ldquo;id&rdquo;: 1,</p>
+<p>&ldquo;carId&rdquo;: 1,</p>
+<p>&ldquo;cars&rdquo;: &ldquo;ACURA&rdquo;</p>
+<p>},</p>
+<p>{</p>
+<p>&ldquo;id&rdquo;: 2,</p>
+<p>&ldquo;carId&rdquo;: 2,</p>
+<p>&ldquo;cars&rdquo;: &ldquo;ALFA ROMEO&rdquo;</p>
+<p>}</p>
+<p>]</p></p>
                                     </div>
                                     
                                 </div>
@@ -470,7 +515,7 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/carmake</code>
                                     <div class="description request-description">
                                         <p><p>This endpoint retrieves a specific car model based on the provided carID.</p>
 <p>- carID: The unique identifier for the car model you want to retrieve.</p>
-<p><strong>EXAMPLE RESPONSE (json): -</strong></p>
+<p><strong>Response Body: -</strong></p>
 <p>{</p>
 <p>&ldquo;id&rdquo;: 1523,</p>
 <p>&ldquo;carId&rdquo;: 48,</p>
@@ -525,13 +570,11 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/carmodel/48</code>
                                     
                                     <div class="description request-description">
                                         <p><p><code>get outstanding payments</code> retrieves a list of debit notes and net amounts that have not yet been processed or paid.</p>
-<p>Example Response (json)</p>
+<p><u>Response Body</u>: -</p>
 <p>{</p>
-<p>``` json<br>
-    &ldquo;dncnNo&rdquo;: &ldquo;string&rdquo;,<br>
-    &ldquo;netAmount&rdquo;: number<br>
-}</p>
-<p>```</p></p>
+<p>&ldquo;dncnNo&rdquo;: &ldquo;String&rdquo;,</p>
+<p>&ldquo;netAmount&rdquo;: number</p>
+<p>}</p></p>
                                     </div>
                                     
                                     <div class="request-body">
@@ -594,7 +637,7 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                                      <div class="heading">
                                         <div class="name">
                                             <span class="POST method" >POST</span>
-                                            09. paymentConfirmation <span class="lock-icon"></span>
+                                            07. paymentConfirmation <span class="lock-icon"></span>
                                         </div>
                                      </div>
                                     <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/confirmPayment</div>
@@ -608,7 +651,7 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                             <div class="raw-body code-snippet">
-                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="09. paymentConfirmation">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="07. paymentConfirmation">
                                                   <code>
                                                     
 {"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}
@@ -628,13 +671,13 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                                     <div class="responses-index">
                                         <div class="dropdown response-name">
                                             <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">09. paymentConfirmation</span>
+                                              <span id="selected" class="response-name-label">07. paymentConfirmation</span>
                                                 <span class="caret"></span>
 
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="7" data-response-info="response_7">09. paymentConfirmation</li>
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">07. paymentConfirmation</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -642,11 +685,92 @@ GET {{base_url}}/omnic/api/insuranceService/insurance/outstandingPayments
                                 <div class="formatted-requests " data-request-id="7"  data-id="response_7">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="09. paymentConfirmation">
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="07. paymentConfirmation">
                                                 <code class="is-highlighted">
 POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
 
 {"request":"01NXkvtTXPgir8Scdvrg4lGZx5jgnHRerzeOq7L/lWOoq4bcjglL4OXGUuX1zK6H5ieTjGU3KnqXJp7rDfA9oA\u003d\u003d"}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="8">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            08. renew policy <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{base_url}}/omnic/api/insuranceService/insurance/policy/renewal</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><p><code>renew policy</code> endpoint is used to renew an insurance coverage.</p>
+<p><u><b>Response Body</b></u><br>
+[<br>
+&ldquo;responseCode&rdquo;: &ldquo;string&rdquo;,<br>
+&ldquo;status&rdquo;: boolean,<br>
+&ldquo;message&rdquo;: &ldquo;string&rdquo;,<br>
+&ldquo;data&rdquo;: {<br>
+&ldquo;debitNoteNumber&rdquo;: 0,<br>
+&ldquo;sumInsured&rdquo;: 0.00,<br>
+&ldquo;premiumAmount&rdquo;: 0.00,<br>
+&ldquo;commissionRate&rdquo;: 0<br>
+}<br>
+]</p></p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="08. renew policy">
+                                                  <code>
+                                                    
+{
+    "request": "ved9LCsca+mJ5yagvYVecpA75JawPYW/mD+4zqpTrUzuMR5KOLLlildu0fklcJ7aKaaruSB6/U/NSuJljzhWfm5rEwYf207PFxa1s5NLvOJUs4sIav4jLEv44ofYlwgZnHr+lhqrgizeVc9HHKS6bMBFqnE7TUghTypY90qjQuJNPzMWb2vPpr8hLHu6/8g+"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">08. renew policy</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">08. renew policy</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="08. renew policy">
+                                                <code class="is-highlighted">
+POST {{base_url}}/omnic/api/insuranceService/insurance/policy/renewal
+
+{
+    "request": "ved9LCsca+mJ5yagvYVecpA75JawPYW/mD+4zqpTrUzuMR5KOLLlildu0fklcJ7aKaaruSB6/U/NSuJljzhWfm5rEwYf207PFxa1s5NLvOJUs4sIav4jLEv44ofYlwgZnHr+lhqrgizeVc9HHKS6bMBFqnE7TUghTypY90qjQuJNPzMWb2vPpr8hLHu6/8g+"
+}</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -671,7 +795,7 @@ POST {{base_url}}/omnic/api/insuranceService/insurance/confirmPayment
     <script src="js/bootstrap-treeview.min.js"></script>
     <script src="js/main.min.js"></script>
     <script type="application/javascript">
-        var data = [{'text': '01. get access token', 'href': '#1', 'method': 'POST'}, {'text': '02 buy insurance', 'href': '#2', 'method': 'POST'}, {'text': '03. get subrisks', 'href': '#3', 'method': 'GET'}, {'text': '04. get car make', 'href': '#4', 'method': 'GET'}, {'text': '05. get car model by id', 'href': '#5', 'method': 'GET'}, {'text': '06. get outstanding payments', 'href': '#6', 'method': 'GET'}, {'text': '09. paymentConfirmation', 'href': '#7', 'method': 'POST'}]
+        var data = [{'text': '01. get access token', 'href': '#1', 'method': 'POST'}, {'text': '02 buy insurance', 'href': '#2', 'method': 'POST'}, {'text': '03. get subrisks', 'href': '#3', 'method': 'GET'}, {'text': '04. get car make', 'href': '#4', 'method': 'GET'}, {'text': '05. get car model by id', 'href': '#5', 'method': 'GET'}, {'text': '06. get outstanding payments', 'href': '#6', 'method': 'GET'}, {'text': '07. paymentConfirmation', 'href': '#7', 'method': 'POST'}, {'text': '08. renew policy', 'href': '#8', 'method': 'POST'}]
         $('#tree').treeview({
             data: data,
             levels: 10,
